@@ -1,0 +1,344 @@
+{
+    "datosPersonales": {
+        "id": 1,
+        "nombre": "Catherena",
+        "apellido": "Beresovsky",
+        "profesion": "Trainee Web Developer",
+        "descripcion": "Problem solving oriented, hard working and eager to learn, team member. I’m looking for a team to work with and improve as a web developer!",
+        "pais": "Argentina",
+        "provincia": "Misiones",
+        "email": "beresovskyc@gmail.com",
+        "linkedIn": "https://www.linkedin.com/in/catherena-beresovsky/",
+        "gitHub": "https://github.com/icatherena/"
+    },
+    "educacion": [
+        {
+            "id": 1,
+            "nombre": "Bachiller en Ciencias Naturales",
+            "institucion": "Instituto Vuelta del Ombú",
+            "nivel": "Educación Media",
+            "finalizado": true,
+            "fechaFin": "2014-12-1"
+        },
+        {
+            "id": 2,
+            "nombre": "Licenciatura en Genética",
+            "institucion": "Universidad Nacional de Misiones",
+            "nivel": "Educación Superior",
+            "finalizado": false,
+            "fechaFin": null
+        },
+        {
+            "id": 3,
+            "nombre": "Web Development with React & NodeJs",
+            "institucion": "Silicon Misiones",
+            "nivel": "Certificación",
+            "finalizado": false,
+            "fechaFin": null
+        },
+        {
+            "id": 4,
+            "nombre": "Bioinformatic Basics",
+            "institucion": "Silicon Misiones",
+            "nivel": "Certificación",
+            "finalizado": true,
+            "fechaFin": "2023-09-13"
+        },
+        {
+            "id": 5,
+            "nombre": "React Basics",
+            "institucion": "Coursera",
+            "finalizado": true,
+            "fechaFin": "2023-04-21"
+        },
+        {
+            "id": 6,
+            "nombre": "FullStack Web Development with Java",
+            "institucion": "PoloTIC Misiones",
+            "finalizado": true,
+            "fechaFin": "2023-01-03"
+        },
+        {
+            "id": 7,
+            "nombre": "UX/UI Design",
+            "institucion": "PoloTIC Misiones",
+            "finalizado": true,
+            "fechaFin": "2022-08-31"
+        },
+        {
+            "id": 8,
+            "nombre": "Programming Basics",
+            "institucion": "PoloTIC Misiones",
+            "finalizado": true,
+            "fechaFin": "2021-08-06"
+        }
+    ],
+    "experiencia": [
+        {
+            "id": 1,
+            "posicion": "Trainee Web Developer",
+            "empresa": "Sirius Software",
+            "fechaInicio": "2023-03-06",
+            "fechaFin": "2023-09-11",
+            "descripcion": "Involved in the development of intuitive and appealing GUIs implementing Material UI for styling, AXIOS’ library for data request and React.js to efficiently manage data state. Employed TypeScript for robust type management and code maintainability and ApolloClient/ GraphQL to optimize data fetching. Implemented new features and modified data schemas to enhance project functionality. Created middlewares for errorhandling and routing, implementing Express.js. Used Prisma ORM and PostgreSQL to manage relational databases. Migrated and containerized projects using Prisma ORM and Docker."
+        }
+    ],
+    "tecnologia": [
+        {
+            "id": 1,
+            "lenguaje": true,
+            "framework": false,
+            "libreria": false,
+            "backEnd": true,
+            "nombre": "Java",
+            "nivel": 85
+        },
+        {
+            "id": 2,
+            "lenguaje": false,
+            "framework": true,
+            "libreria": false,
+            "backEnd": true,
+            "nombre": "Spring Boot",
+            "nivel": 50
+        },
+        {
+            "id": 3,
+            "lenguaje": true,
+            "framework": false,
+            "libreria": false,
+            "backEnd": true,
+            "nombre": "JavaScript",
+            "nivel": 95
+        },
+        {
+            "id": 4,
+            "lenguaje": false,
+            "framework": false,
+            "libreria": true,
+            "backEnd": true,
+            "nombre": "TypeScript",
+            "nivel": 90
+        },
+        {
+            "id": 5,
+            "lenguaje": false,
+            "framework": true,
+            "libreria": false,
+            "backEnd": false,
+            "nombre": "React.js",
+            "nivel": 80
+        },
+        {
+            "id": 6,
+            "lenguaje": false,
+            "framework": true,
+            "libreria": false,
+            "backEnd": true,
+            "nombre": "Node.js",
+            "nivel": 85
+        },
+        {
+            "id": 7,
+            "lenguaje": false,
+            "framework": true,
+            "libreria": false,
+            "backEnd": true,
+            "nombre": "Express.js",
+            "nivel": 70
+        },
+        {
+            "id": 8,
+            "lenguaje": false,
+            "framework": false,
+            "libreria": true,
+            "backEnd": false,
+            "nombre": "Material UI",
+            "nivel": 80
+        },
+        {
+            "id": 9,
+            "lenguaje": false,
+            "framework": false,
+            "libreria": true,
+            "backEnd": false,
+            "nombre": "Bootstrap",
+            "nivel": 60
+        },
+        {
+            "id": 10,
+            "lenguaje": true,
+            "framework": false,
+            "libreria": false,
+            "backEnd": true,
+            "nombre": "SQL",
+            "nivel": 80
+        },
+        {
+            "id": 11,
+            "lenguaje": false,
+            "framework": false,
+            "libreria": false,
+            "backEnd": true,
+            "nombre": "Docker",
+            "nivel": 60
+        },
+        {
+            "id": 12,
+            "lenguaje": false,
+            "framework": false,
+            "libreria": false,
+            "backEnd": true,
+            "nombre": "Prisma ORM",
+            "nivel": 80
+        }
+    ],
+    "proyecto": [
+        {
+            "id": 1,
+            "nombre": "Mini-Medium Server-Side",
+            "tecnologia": [
+                {
+                    "id": 1,
+                    "nombre": "TypeScript"
+                },
+                {
+                    "id": 2,
+                    "nombre": "Node.js"
+                },
+                {
+                    "id": 3,
+                    "nombre": "Express.js"
+                },
+                {
+                    "id": 4,
+                    "nombre": "Prisma ORM"
+                },
+                {
+                    "id": 5,
+                    "nombre": "Docker"
+                },
+                {
+                    "id": 6,
+                    "nombre": "PostgreSQL"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "nombre": "Mini-Medium Client-Side",
+            "tecnologia": [
+                {
+                    "id": 1,
+                    "nombre": "TypeScript"
+                },
+                {
+                    "id": 2,
+                    "nombre": "React.js"
+                },
+                {
+                    "id": 3,
+                    "nombre": "React Router DOM"
+                },
+                {
+                    "id": 4,
+                    "nombre": "Axios"
+                },
+                {
+                    "id": 5,
+                    "nombre": "Material UI"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "nombre": "Twitter Server-Side",
+            "tecnologia": [
+                {
+                    "id": 1,
+                    "nombre": "TypeScript"
+                },
+                {
+                    "id": 2,
+                    "nombre": "Node.js"
+                },
+                {
+                    "id": 3,
+                    "nombre": "Express.js"
+                },
+                {
+                    "id": 4,
+                    "nombre": "Prisma ORM"
+                },
+                {
+                    "id": 5,
+                    "nombre": "Docker"
+                },
+                {
+                    "id": 6,
+                    "nombre": "PostgreSQL"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "nombre": "Pokemon Client-Side",
+            "tecnologia": [
+                {
+                    "id": 1,
+                    "nombre": "TypeScript"
+                },
+                {
+                    "id": 2,
+                    "nombre": "React.js"
+                },
+                {
+                    "id": 3,
+                    "nombre": "React Router DOM"
+                },
+                {
+                    "id": 4,
+                    "nombre": "Axios"
+                },
+                {
+                    "id": 5,
+                    "nombre": "Material UI"
+                },
+                {
+                    "id": 6,
+                    "nombre": "GraphQL"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "nombre": "Management system for sports fields - Full-Stack",
+            "tecnologia": [
+                {
+                    "id": 1,
+                    "nombre": "Java"
+                },
+                {
+                    "id": 2,
+                    "nombre": "SpringBoot"
+                },
+                {
+                    "id": 3,
+                    "nombre": "MariaDB"
+                },
+                {
+                    "id": 4,
+                    "nombre": "Thymeleaf"
+                },
+                {
+                    "id": 5,
+                    "nombre": "HTML"
+                },
+                {
+                    "id": 6,
+                    "nombre": "CSS"
+                }
+            ]
+        }
+    ]
+}
