@@ -1,7 +1,7 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Grid, Link, Typography } from '@mui/material';
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
 
-const NavBar = () => {
+const NavBar = ({linkedIn, github}: any) => {
     return (
         <Grid container
             sx={{
@@ -128,55 +128,59 @@ const NavBar = () => {
                         flexDirection: 'row',
                         justifyContent: 'center',
                         alignContent: 'center',
-                        mr: '5em',
+                        mr: '.5em',
                         gap: 1
                     }}
                 >
-                    <Box
-                        sx={{
-                            backgroundColor: '#f9b343',
-                            color: '#f5f5f5',
-                            width: '1.5em',
-                            height: '1.5em',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            '&:hover': {
-                                backgroundColor: '#fd9902'
-                            },
-                            '&:focus': {
-                                backgroundColor: '#fd9902'
-                            }
-                        }}
-                    >
-                        <FaLinkedinIn
-                            style={{
-                                fontSize: 'small'
+                    <Link href={linkedIn} target={'_blank'}>
+                        <Box
+                            sx={{
+                                backgroundColor: '#f9b343',
+                                color: '#f5f5f5',
+                                width: '1.5em',
+                                height: '1.5em',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                '&:hover': {
+                                    backgroundColor: '#fd9902'
+                                },
+                                '&:focus': {
+                                    backgroundColor: '#fd9902'
+                                }
                             }}
-                        />
-                    </Box>
-                    <Box
-                        sx={{
-                            backgroundColor: '#f9b343',
-                            color: '#f5f5f5',
-                            width: '1.5em',
-                            height: '1.5em',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            '&:hover': {
-                                backgroundColor: '#fd9902'
-                            }
-                        }}
-                    >
-                        <FaGithub
-                            style={{
-                                fontSize: 'small'
+                        >
+                            <FaLinkedinIn
+                                style={{
+                                    fontSize: 'small'
+                                }}
+                            />
+                        </Box>
+                    </Link>
+                    <Link href={github} target={'_blank'}>
+                        <Box
+                            sx={{
+                                backgroundColor: '#f9b343',
+                                color: '#f5f5f5',
+                                width: '1.5em',
+                                height: '1.5em',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                '&:hover': {
+                                    backgroundColor: '#fd9902'
+                                }
                             }}
-                        />
-                    </Box>
+                        >
+                            <FaGithub
+                                style={{
+                                    fontSize: 'small'
+                                }}
+                            />
+                        </Box>
+                    </Link>
                 </Grid>
             </Grid>
         </Grid>

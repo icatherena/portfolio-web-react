@@ -4,6 +4,7 @@ import {useEffect, useState} from 'react';
 import NavBar from './components/NavBar';
 import AboutMe from './components/AboutMe';
 import Skills from './components/Skills';
+import Resume from './components/Resume';
 
 /* interface Tech {
   id: number,
@@ -22,7 +23,13 @@ function App() {
   const [career, setCareer] = useState("")
   const [summary, setSummary] = useState("")
 
+  const [linkedIn, setLinkedIn] = useState("")
+  const [github, setGithub] = useState("")
+
   const [tech, setTech] = useState([])
+
+  const [experience, setExperience] = useState([])
+  const [education, setEducation] = useState([])
   
   useEffect(() => {
     fetch('data.json')
@@ -32,7 +39,11 @@ function App() {
         setLastName(data.datosPersonales.apellido);
         setCareer(data.datosPersonales.profesion);
         setSummary(data.datosPersonales.descripcion);
-        setTech(data.tecnologia.map((item: any)=>item))
+        setLinkedIn(data.datosPersonales.linkedIn);
+        setGithub(data.datosPersonales.gitHub);
+        setTech(data.tecnologia.map((item: any)=>item));
+        setExperience(data.experiencia.map((item: any)=>item));
+        setEducation(data.educacion.map((item: any)=>item))
       })
       .catch((error) => console.error(error))    
   }, [])
@@ -51,7 +62,10 @@ function App() {
             pl: '2em'
           }}
         >
-          <NavBar/>
+          <NavBar
+            linkedIn={linkedIn}
+            github={github}
+          />
         </Grid>
         <Grid item lg={9}
         >
@@ -64,6 +78,12 @@ function App() {
         </Grid>
         <Grid item lg={9}>
           <Skills tech={tech}/>
+        </Grid>
+        <Grid item lg={9}>
+          <Resume 
+            education={education}
+            experience={experience}
+          />
         </Grid>
       </Grid>
     </Grid>
