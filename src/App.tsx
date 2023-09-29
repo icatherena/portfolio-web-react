@@ -6,6 +6,10 @@ import AboutMe from './components/AboutMe';
 import Skills from './components/Skills';
 import Resume from './components/Resume';
 
+import About from './components/About';
+import Nav from './components/Nav';
+import { ThemeProvider, useTheme } from '@emotion/react';
+
 /* interface Tech {
   id: number,
   lenguaje: boolean,
@@ -48,8 +52,48 @@ function App() {
       .catch((error) => console.error(error))    
   }, [])
 
+  const theme = useTheme()
+
   return (
-    <Grid container>
+    <ThemeProvider theme={theme}>
+      <Grid container>
+        <Grid item container xs={12}
+          sx={{
+            width: '100vw',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <Grid item xs={8}>
+            <Nav/>
+          </Grid>
+        </Grid>
+        <Grid item container xs={12}
+          sx={{
+            width: '100vw',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}        
+        >
+          <Grid item xs={8}>
+            <About
+              name={name} 
+              lastName={lastName}
+              career={career}
+              summary={summary}
+            />
+          </Grid>
+        </Grid>
+      </Grid>
+    </ThemeProvider>
+  );
+}
+
+export default App;
+
+{/* <Grid container>
       <Grid item container
         sx={{
           w: '100vw',
@@ -86,8 +130,4 @@ function App() {
           />
         </Grid>
       </Grid>
-    </Grid>
-  );
-}
-
-export default App;
+    </Grid> */}
