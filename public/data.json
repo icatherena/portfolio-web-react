@@ -3,36 +3,37 @@
         "id": 1,
         "nombre": "Catherena",
         "apellido": "Beresovsky",
-        "profesion": "Trainee Web Developer",
-        "descripcion": "Problem solving oriented, hard working and eager to learn, team member. I’m looking for a team to work with and improve as a web developer!",
+        "profesion": "Web Developer",
+        "descripcion": "I'm currently training as web developer and I’m looking for a team to work with and improve as a one!",
         "pais": "Argentina",
         "provincia": "Misiones",
         "email": "beresovskyc@gmail.com",
         "linkedIn": "https://www.linkedin.com/in/catherena-beresovsky/",
-        "gitHub": "https://github.com/icatherena/"
+        "gitHub": "https://github.com/icatherena/",
+        "resume": "https://drive.google.com/u/0/uc?id=1RAw3nZ1rZORFJKRuDnqU3JOPk43JABpX&export=download"
     },
     "educacion": [
         {
             "id": 1,
-            "nombre": "Bachiller en Ciencias Naturales",
-            "institucion": "Instituto Vuelta del Ombú",
-            "nivel": "Educación Media",
-            "finalizado": true,
-            "fechaFin": "2014-12-1"
+            "nombre": "Licenciatura en Genética",
+            "institucion": "Universidad Nacional de Misiones",
+            "nivel": "Bachellor Degree",
+            "finalizado": false,
+            "fechaFin": null
         },
         {
             "id": 2,
-            "nombre": "Licenciatura en Genética",
-            "institucion": "Universidad Nacional de Misiones",
-            "nivel": "Educación Superior",
-            "finalizado": false,
-            "fechaFin": null
+            "nombre": "Bachiller en Ciencias Naturales",
+            "institucion": "Instituto Vuelta del Ombú",
+            "nivel": "High School",
+            "finalizado": true,
+            "fechaFin": "2014-12-1"
         },
         {
             "id": 3,
             "nombre": "Web Development with React & NodeJs",
             "institucion": "Silicon Misiones",
-            "nivel": "Certificación",
+            "nivel": "Certificate",
             "finalizado": false,
             "fechaFin": null
         },
@@ -40,7 +41,7 @@
             "id": 4,
             "nombre": "Bioinformatic Basics",
             "institucion": "Silicon Misiones",
-            "nivel": "Certificación",
+            "nivel": "Certificate",
             "finalizado": true,
             "fechaFin": "2023-09-13"
         },
@@ -48,6 +49,7 @@
             "id": 5,
             "nombre": "React Basics",
             "institucion": "Coursera",
+            "nivel": "Certificate",
             "finalizado": true,
             "fechaFin": "2023-04-21"
         },
@@ -55,6 +57,7 @@
             "id": 6,
             "nombre": "FullStack Web Development with Java",
             "institucion": "PoloTIC Misiones",
+            "nivel": "Certificate",
             "finalizado": true,
             "fechaFin": "2023-01-03"
         },
@@ -62,6 +65,7 @@
             "id": 7,
             "nombre": "UX/UI Design",
             "institucion": "PoloTIC Misiones",
+            "nivel": "Certificate",
             "finalizado": true,
             "fechaFin": "2022-08-31"
         },
@@ -69,6 +73,7 @@
             "id": 8,
             "nombre": "Programming Basics",
             "institucion": "PoloTIC Misiones",
+            "nivel": "Certificate",
             "finalizado": true,
             "fechaFin": "2021-08-06"
         }
@@ -80,7 +85,7 @@
             "empresa": "Sirius Software",
             "fechaInicio": "2023-03-06",
             "fechaFin": "2023-09-11",
-            "descripcion": "Involved in the development of intuitive and appealing GUIs implementing Material UI for styling, AXIOS’ library for data request and React.js to efficiently manage data state. Employed TypeScript for robust type management and code maintainability and ApolloClient/ GraphQL to optimize data fetching. Implemented new features and modified data schemas to enhance project functionality. Created middlewares for errorhandling and routing, implementing Express.js. Used Prisma ORM and PostgreSQL to manage relational databases. Migrated and containerized projects using Prisma ORM and Docker."
+            "descripcion": "Internship"
         }
     ],
     "tecnologia": [
@@ -91,7 +96,8 @@
             "libreria": false,
             "backEnd": true,
             "nombre": "Java",
-            "nivel": 85
+            "nivel": 85,
+            "image": "https://static.vecteezy.com/system/resources/previews/019/899/953/non_2x/java-free-download-free-png.png"
         },
         {
             "id": 2,
@@ -100,7 +106,8 @@
             "libreria": false,
             "backEnd": true,
             "nombre": "Spring Boot",
-            "nivel": 50
+            "nivel": 50,
+            "image": "https://chuidiang.org/images/1/11/Training-spring-boot.png"
         },
         {
             "id": 3,
@@ -109,7 +116,8 @@
             "libreria": false,
             "backEnd": true,
             "nombre": "JavaScript",
-            "nivel": 95
+            "nivel": 95,
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
         },
         {
             "id": 4,
@@ -118,7 +126,8 @@
             "libreria": true,
             "backEnd": true,
             "nombre": "TypeScript",
-            "nivel": 90
+            "nivel": 90,
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1024px-Typescript_logo_2020.svg.png"
         },
         {
             "id": 5,
@@ -127,7 +136,8 @@
             "libreria": false,
             "backEnd": false,
             "nombre": "React.js",
-            "nivel": 80
+            "nivel": 80,
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
         },
         {
             "id": 6,
@@ -136,7 +146,8 @@
             "libreria": false,
             "backEnd": true,
             "nombre": "Node.js",
-            "nivel": 85
+            "nivel": 85,
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/590px-Node.js_logo.svg.png"
         },
         {
             "id": 7,
@@ -145,7 +156,8 @@
             "libreria": false,
             "backEnd": true,
             "nombre": "Express.js",
-            "nivel": 70
+            "nivel": 70,
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png"
         },
         {
             "id": 8,
@@ -154,7 +166,8 @@
             "libreria": true,
             "backEnd": false,
             "nombre": "Material UI",
-            "nivel": 80
+            "nivel": 80,
+            "image": "https://mui.com/static/logo.png"
         },
         {
             "id": 9,
@@ -163,7 +176,8 @@
             "libreria": true,
             "backEnd": false,
             "nombre": "Bootstrap",
-            "nivel": 60
+            "nivel": 60,
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1280px-Bootstrap_logo.svg.png"
         },
         {
             "id": 10,
@@ -172,7 +186,8 @@
             "libreria": false,
             "backEnd": true,
             "nombre": "SQL",
-            "nivel": 80
+            "nivel": 80,
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png"
         },
         {
             "id": 11,
@@ -181,7 +196,8 @@
             "libreria": false,
             "backEnd": true,
             "nombre": "Docker",
-            "nivel": 60
+            "nivel": 60,
+            "image": "https://www.docker.com/wp-content/uploads/2023/08/logo-dont-proportions.svg"
         },
         {
             "id": 12,
@@ -190,7 +206,8 @@
             "libreria": false,
             "backEnd": true,
             "nombre": "Prisma ORM",
-            "nivel": 80
+            "nivel": 80,
+            "image": "https://cdn.worldvectorlogo.com/logos/prisma-2.svg"
         }
     ],
     "proyecto": [

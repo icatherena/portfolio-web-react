@@ -1,13 +1,15 @@
 import { Grid } from '@mui/material';
 
-import {useEffect, useState} from 'react';
-import NavBar from './components/NavBar';
-import AboutMe from './components/AboutMe';
-import Skills from './components/Skills';
-import Resume from './components/Resume';
+import { useEffect, useState } from 'react';
 
 import About from './components/About';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import Heroe from './components/Heroe';
 import Nav from './components/Nav';
+import Resume from './components/Resume';
+import Skills from './components/Skills';
+
 import { ThemeProvider, useTheme } from '@emotion/react';
 
 /* interface Tech {
@@ -27,14 +29,31 @@ function App() {
   const [career, setCareer] = useState("")
   const [summary, setSummary] = useState("")
 
+  const [country, setCountry] = useState("")
+  const [province, setProvince] = useState("")
+
+  const [email, setEmail] = useState("")
+
   const [linkedIn, setLinkedIn] = useState("")
   const [github, setGithub] = useState("")
+
+  const [resume, setResume] = useState('')
 
   const [tech, setTech] = useState([])
 
   const [experience, setExperience] = useState([])
   const [education, setEducation] = useState([])
-  
+
+  const [hasShadow, setHasShadow] = useState(false)
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setHasShadow(true)
+    } else {
+      setHasShadow(false)
+    }
+  }
+
   useEffect(() => {
     fetch('data.json')
       .then((response) => response.json())
@@ -45,18 +64,82 @@ function App() {
         setSummary(data.datosPersonales.descripcion);
         setLinkedIn(data.datosPersonales.linkedIn);
         setGithub(data.datosPersonales.gitHub);
-        setTech(data.tecnologia.map((item: any)=>item));
-        setExperience(data.experiencia.map((item: any)=>item));
-        setEducation(data.educacion.map((item: any)=>item))
+        setTech(data.tecnologia.map((item: any) => item));
+        setExperience(data.experiencia.map((item: any) => item));
+        setEducation(data.educacion.map((item: any) => item));
+        setCountry(data.datosPersonales.pais);
+        setProvince(data.datosPersonales.provincia);
+        setEmail(data.datosPersonales.email);
+        setResume(data.datosPersonales.resume)
       })
-      .catch((error) => console.error(error))    
+      .catch((error) => console.error(error))
+    window.addEventListener('scroll', handleScroll)
   }, [])
+
+  const location: String[] = []
+  location.push(country, province)
 
   const theme = useTheme()
 
   return (
     <ThemeProvider theme={theme}>
       <Grid container>
+        {hasShadow ? (
+          <Grid item container xs={12}
+          sx={{
+            width: '100vw',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            position: 'fixed',
+            zIndex: 10,
+            backgroundColor: '#fff',
+            boxShadow: '0 5px 5px rgba(0, 0, 0, 0.1)',
+            transition: 'box-shadow 0.5s ease-in-out',
+          }}
+        >
+          <Grid item xs={8}>
+            <Nav/>
+          </Grid>
+        </Grid>
+        ) : (
+        <Grid item container xs={12}
+          sx={{
+            width: '100vw',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            position: 'fixed',
+            zIndex: 10,
+            backgroundColor: '#fff',
+            boxShadow: '0 0 0 rgba(0, 0, 0, 0.2)',
+            transition: 'box-shadow 0.5s ease-in-out',
+          }}
+        >
+          <Grid item xs={8}>
+            <Nav />
+          </Grid>
+        </Grid>
+        )}
+        <Grid item container xs={12}
+          sx={{
+            width: '100vw',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            mt: '6em'
+          }}
+        >
+          <Grid item xs={8}>
+            <Heroe
+              name={name}
+              lastName={lastName}
+              career={career}
+              summary={summary}
+              resume={resume}
+            />
+          </Grid>
+        </Grid>
         <Grid item container xs={12}
           sx={{
             width: '100vw',
@@ -66,7 +149,7 @@ function App() {
           }}
         >
           <Grid item xs={8}>
-            <Nav/>
+            <About />
           </Grid>
         </Grid>
         <Grid item container xs={12}
@@ -75,14 +158,56 @@ function App() {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center'
-          }}        
+          }}
         >
           <Grid item xs={8}>
-            <About
-              name={name} 
-              lastName={lastName}
-              career={career}
-              summary={summary}
+            <Skills
+              tech={tech}
+            />
+          </Grid>
+        </Grid>
+        <Grid item container xs={12}
+          sx={{
+            width: '100vw',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <Grid item xs={8}>
+            <Resume
+              education={education}
+              experience={experience}
+            />
+          </Grid>
+        </Grid>
+        <Grid item container xs={12}
+          sx={{
+            width: '100vw',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <Grid item xs={8}>
+            <Contact
+              location={location}
+              email={email}
+              github={github}
+              linkedIn={linkedIn}
+            />
+          </Grid>
+        </Grid>
+        <Grid item container xs={12}
+          sx={{
+            width: '100vw',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <Grid item xs={12}>
+            <Footer
             />
           </Grid>
         </Grid>
@@ -92,42 +217,3 @@ function App() {
 }
 
 export default App;
-
-{/* <Grid container>
-      <Grid item container
-        sx={{
-          w: '100vw',
-          justifyContent: 'center',
-          backgroundColor: '#f5f5f5',
-        }}
-      >
-        <Grid item lg={10}
-          sx={{
-            pl: '2em'
-          }}
-        >
-          <NavBar
-            linkedIn={linkedIn}
-            github={github}
-          />
-        </Grid>
-        <Grid item lg={9}
-        >
-          <AboutMe 
-            name={name} 
-            lastName={lastName}
-            career={career}
-            summary={summary}
-          />
-        </Grid>
-        <Grid item lg={9}>
-          <Skills tech={tech}/>
-        </Grid>
-        <Grid item lg={9}>
-          <Resume 
-            education={education}
-            experience={experience}
-          />
-        </Grid>
-      </Grid>
-    </Grid> */}

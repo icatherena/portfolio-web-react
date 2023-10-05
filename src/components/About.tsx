@@ -1,65 +1,30 @@
-import { Avatar, Box, Button, Grid, Typography } from "@mui/material";
-import { createTheme } from "@mui/material/styles";
+import { Avatar, Button, Grid, Typography } from "@mui/material"
 
-const About = ({ name, lastName, career, summary }: any) => {
-    const theme = createTheme({
-        breakpoints: {
-            values: {
-              xs: 0,
-              sm: 770,
-              md: 1000,
-              lg: 1200,
-              xl: 1536,
-            },
-          },
-    });
+const About = () => {
     return (
-        <Grid container>
+        <Grid container id="About">
             <Grid item container
                 sx={{
-                    py: '2em',
+                    pt: '4em',
+                    pb: '3em',
                     display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    gap: 7,
-                    [theme.breakpoints.down("md")]: {
-                        flexDirection: 'column'
-                    },
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    alignItems: 'center'
+                }}
+                style={{
+                    fontFamily: 'Roboto, sans-serif',
                 }}
             >
                 <Grid item
                     sx={{
-                        width: '40%',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        [theme.breakpoints.down("md")]: {
-                            width: '100%',
-                            py: '2em'
-                        },
-                    }}
-                >
-                    <Box
-                    >
-                        <Avatar
-                        />
-                    </Box>
-                </Grid>
-                <Grid item
-                    sx={{
                         width: '50%',
-                        height: '60vh',
                         display: 'flex',
                         flexDirection: 'column',
+                        alignItems: 'flex-start',
                         justifyContent: 'center',
+                        gap: 2.5,
                         color: '#828282',
-                        [theme.breakpoints.down("md")]: {
-                            width: '100%'
-                        },
-                        [theme.breakpoints.down("sm")]: {
-                            alignItems: 'center',
-                            justifyContent: 'center'
-                        },
                     }}
                 >
                     <Typography
@@ -70,106 +35,66 @@ const About = ({ name, lastName, career, summary }: any) => {
                             letterSpacing: 4
                         }}
                     >
-                        {career}
+                        About me
                     </Typography>
-                    <Grid
+                    <Typography
                         sx={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContext: 'flex-start',
-                            pt: '.5em',
-                            pb: '1.5em',
-                            [theme.breakpoints.down("sm")]: {
-                                alignItems: 'center',
-                                justifyContent: 'center'
-                            },
+                            fontSize: '2em',
+                            fontWeight: 600,
+                            textTransform: 'capitalize',
+                            color: '#000000'
                         }}
                     >
-                        <Typography
-                            sx={{
-                                fontSize: '2.5em',
-                                fontWeight: 700
-                            }}
-                        >
-                            Hello, I'm
-                        </Typography>
-                        <Typography
-                            variant={'h1'}
-                            color={'#000000'}
-                            sx={{
-                                fontSize: '2.5em',
-                                fontWeight: 700,
-                                [theme.breakpoints.down("sm")]: {
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    justifyContent: 'center'
-                                },
-                            }}
-                        >
-                            {name} <span /> {lastName}!
-                        </Typography>
-                    </Grid>
+                        Hi, I'm here to help you with your next project!
+                    </Typography>
                     <Typography
                         sx={{
                             fontWeight: 400,
                             fontSize: '.8em',
-                            [theme.breakpoints.down("sm")]: {
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'center',
-                                justifyContent: 'center'
-                            },
                         }}
                     >
-                        {summary}
+                        Creating end-to-end solutions to enhance performance
+                        while still cratfting intuitive user-friendly web applications
                     </Typography>
                     <Grid
                         sx={{
                            
                             display: 'flex',
                             flexDirection: 'row',
-                            gap: 2,
-                            mt: '2em'
+                            mt: '1em'
                         }}
                     >
-                            <Button
-                                sx={{
-                                    py: '1em',
-                                    px: '3em',
-                                    fontWeight: 500,
-                                    fontSize: '.7em',
-                                    textTransform: 'capitalize',
-                                    color: '#ffffff',
-                                    backgroundColor: '#000000',
-                                    //transition:' box-shadow 0.3s ease',
-                                    '&:hover': {
-                                        backgroundColor: '#1C1B1B',
-                                        //boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)'
-                                    }
-                                }}
-                            >
-                                Hire Me
-                            </Button>    
-                            <Button
-                                sx={{
-                                    py: '1em',
-                                    px: '3em',
-                                    fontWeight: 500,
-                                    fontSize: '.7em',
-                                    textTransform: 'capitalize',
-                                    color: '#000000',
-                                    backgroundColor: '#BEBEBE',
-                                    //transition:' box-shadow 0.3s ease',
-                                    '&:hover': {
-                                        backgroundColor: '#ADADAD',
-                                        //boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)'
-                                    }
-                                }}
-                            >
-                                Download CV
-                            </Button>
+                        <Button
+                            href="#Contact"
+                            sx={{
+                                py: '.8em',
+                                px: '2.5em',
+                                fontWeight: 400,
+                                fontSize: '.6em',
+                                textTransform: 'capitalize',
+                                color: '#ffffff',
+                                backgroundColor: '#000000',
+                                //transition:' box-shadow 0.3s ease',
+                                '&:hover': {
+                                    backgroundColor: '#1C1B1B',
+                                    //boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)'
+                                }
+                            }}
+                        >
+                            Contact me
+                        </Button>
                     </Grid>
+                </Grid>
+                <Grid item
+                    sx={{
+                        width: '50%',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'flex-end',
+                        justifyContent: 'center',
+                    }}
+                >
+                    <Avatar/>
                 </Grid>
             </Grid>
         </Grid>

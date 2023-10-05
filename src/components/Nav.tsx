@@ -1,4 +1,4 @@
-import { Avatar, Box, Button, Grid, Typography } from "@mui/material";
+import { Grid, Link, Typography } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 
 const Nav = () => {
@@ -45,73 +45,111 @@ const Nav = () => {
                         gap: 5,
                     }}
                 >
-                    <Typography 
-                        fontSize={'.7em'} 
-                        fontWeight={500}
-                        sx={{
+                    <Link 
+                        href="#About"
+                        sx={{                   
+                            textDecoration: 'none',
+                            color: '#000',
                             '&:hover': {
-                                color: '#e95b9f'
-                            },
-                            [theme.breakpoints.between("xs", "sm")]: {
-                                display: 'none'
+                                color: '#e95b9f',
                             },
                         }}
                     >
-                        About
-                    </Typography>
-                    <Typography 
-                        fontSize={'.7em'} 
-                        fontWeight={500}
-                        sx={{
+                        <Typography 
+                            fontSize={'.7em'} 
+                            fontWeight={500}
+                            sx={{
+                                [theme.breakpoints.between("xs", "sm")]: {
+                                    display: 'none'
+                                },
+                            }}
+                        >
+                            About
+                        </Typography>
+                    </Link>
+                    <Link 
+                        href="#Stack"
+                        sx={{                   
+                            textDecoration: 'none',
+                            color: '#000',
                             '&:hover': {
-                                color: '#e95b9f'
-                            },
-                            [theme.breakpoints.between("xs", "sm")]: {
-                                display: 'none'
+                                color: '#e95b9f',
                             },
                         }}
                     >
-                        Stack
-                    </Typography>
-                    <Typography 
-                        fontSize={'.7em'} 
-                        fontWeight={500}
-                        sx={{
+                        <Typography 
+                            fontSize={'.7em'} 
+                            fontWeight={500}
+                            sx={{
+                                [theme.breakpoints.between("xs", "sm")]: {
+                                    display: 'none'
+                                },
+                            }}
+                        >
+                            Stack
+                        </Typography>
+                    </Link>
+                    <Link 
+                        href="#Resume"
+                        sx={{                   
+                            textDecoration: 'none',
+                            color: '#000',
                             '&:hover': {
-                                color: '#e95b9f'
-                            },
-                            [theme.breakpoints.between("xs", "sm")]: {
-                                display: 'none'
+                                color: '#e95b9f',
                             },
                         }}
                     >
-                        Projects
-                    </Typography>
-                    <Typography 
-                        fontSize={'.7em'} 
-                        fontWeight={500}
-                        sx={{
+                        <Typography 
+                            fontSize={'.7em'} 
+                            fontWeight={500}
+                            sx={{
+                                [theme.breakpoints.between("xs", "sm")]: {
+                                    display: 'none'
+                                },
+                            }}
+                        >
+                            Resume
+                        </Typography>
+                    </Link>
+                    <Link 
+                        href="#Projects"
+                        sx={{                   
+                            textDecoration: 'none',
+                            color: '#000',
                             '&:hover': {
-                                color: '#e95b9f'
-                            },
-                            [theme.breakpoints.between("xs", "sm")]: {
-                                display: 'none'
+                                color: '#e95b9f',
                             },
                         }}
                     >
-                        Resume
-                    </Typography>
-                    <Typography 
-                        fontSize={'.7em'} 
-                        fontWeight={500}
-                        sx={{
+                        <Typography 
+                            fontSize={'.7em'} 
+                            fontWeight={500}
+                            sx={{
+                                [theme.breakpoints.between("xs", "sm")]: {
+                                    display: 'none'
+                                },
+                            }}
+                        >
+                            Projects
+                        </Typography>
+                    </Link>
+                    <Link 
+                        href="#Contact"
+                        sx={{                   
+                            textDecoration: 'none',
+                            color: '#000',
                             '&:hover': {
-                                color: '#e95b9f'
-                            }
+                                color: '#e95b9f',
+                            },
                         }}
                     >
-                        Contact
-                    </Typography>
+                        <Typography 
+                            fontSize={'.7em'} 
+                            fontWeight={500}
+                        >
+                            Contact
+                        </Typography>
+                    </Link>
                 </Grid>
             </Grid>
         </Grid>
