@@ -34,7 +34,7 @@ const Contact = ({ location, email, github, linkedIn }: any) => {
     const theme = createTheme({
         breakpoints: {
             values: {
-                xs: 0,
+                xs: 420,
                 sm: 650,
                 md: 835,
                 lg: 900,
@@ -103,6 +103,9 @@ const Contact = ({ location, email, github, linkedIn }: any) => {
                     flexDirection: 'row',
                     justifyContent: 'space-between',
                     alignItems: 'center',
+                    /* [theme.breakpoints.down("xl")]: {
+                        gap: 8
+                    }, */
                     [theme.breakpoints.down("lg")]: {
                         justifyContent: 'center',
                         gap: 6
@@ -309,7 +312,16 @@ const Contact = ({ location, email, github, linkedIn }: any) => {
                         justifyContent: 'flex-start',
                         alignItems: 'center',
                         color: '#828282',
-                        gap: 4
+                        gap: 4,
+                        [theme.breakpoints.down("xl")]: {
+                            //width: '100%',
+                            height: 'fit-content'
+                        },
+                        [theme.breakpoints.down("xs")]: {
+                            width: '100%',
+                            height: 'fit-content',
+                            justifyContent: 'flex-start'
+                        },
                     }}
                 >
                     <Grid item

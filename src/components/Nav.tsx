@@ -26,7 +26,10 @@ const Nav = () => {
                     width: '100vw',
                     gap: 5,
                     [theme.breakpoints.between("xs", "sm")]: {
-                        justifyContent: 'space-between'
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                        gap: 0
                     },
                 }}
                 style={{
