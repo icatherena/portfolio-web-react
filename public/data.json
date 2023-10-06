@@ -214,6 +214,8 @@
         {
             "id": 1,
             "nombre": "Mini-Medium Server-Side",
+            "url": "https://github.com/icatherena/mini-medium",
+            "image": "https://lh3.google.com/u/0/d/16N2BKdFNUzwTZvzMLTwQgq7z6dyVb-N_=w2000-h3138-iv1",
             "tecnologia": [
                 {
                     "id": 1,
@@ -244,6 +246,8 @@
         {
             "id": 2,
             "nombre": "Mini-Medium Client-Side",
+            "url": "https://github.com/icatherena/mini-medium-app",
+            "image": "https://lh3.google.com/u/0/d/1s3z29mrszL6T_Ft3FLMUzeZjyJ7_HBRC=w2000-h3138-iv1",
             "tecnologia": [
                 {
                     "id": 1,
@@ -270,6 +274,8 @@
         {
             "id": 3,
             "nombre": "Twitter Server-Side",
+            "url": "https://gitlab.com/kt-darling/twitter-api",
+            "image": "https://lh3.google.com/u/0/d/12IKIMWI61u7h-ZTrz5AVkTkaMp_nRtvH=w2000-h1988-iv1",
             "tecnologia": [
                 {
                     "id": 1,
@@ -300,6 +306,8 @@
         {
             "id": 4,
             "nombre": "Pokemon Client-Side",
+            "url": "https://github.com/icatherena/poke-app-w-ts",
+            "image": "https://lh3.google.com/u/0/d/18JsVyUZRRII50EAYhE3oj-3IFsoQIchO=w2000-h3138-iv1",
             "tecnologia": [
                 {
                     "id": 1,
@@ -330,6 +338,8 @@
         {
             "id": 5,
             "nombre": "Management system for sports fields - Full-Stack",
+            "url": "https://github.com/icatherena/reserva-canchas",
+            "image": "https://lh3.google.com/u/0/d/1wn43-9EcKFa84MRYBLnPReNvWOeqz9LK=w1366-h619-iv1",
             "tecnologia": [
                 {
                     "id": 1,

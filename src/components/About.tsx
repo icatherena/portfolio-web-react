@@ -1,6 +1,22 @@
-import { Avatar, Button, Grid, Typography } from "@mui/material"
+import { Avatar, Button, Grid, Typography } from "@mui/material";
+
+import { Link } from "react-scroll"
+
+import { createTheme } from "@mui/material/styles";
 
 const About = () => {
+    const theme = createTheme({
+        breakpoints: {
+            values: {
+                xs: 0,
+                sm: 770,
+                md: 1000,
+                lg: 1200,
+                xl: 1536,
+            },
+        },
+    });
+
     return (
         <Grid container id="About">
             <Grid item container
@@ -10,7 +26,10 @@ const About = () => {
                     display: 'flex',
                     flexDirection: 'row',
                     justifyContent: 'space-between',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    [theme.breakpoints.down("sm")]: {
+                        flexDirection: 'column'
+                    },
                 }}
                 style={{
                     fontFamily: 'Roboto, sans-serif',
@@ -25,6 +44,11 @@ const About = () => {
                         justifyContent: 'center',
                         gap: 2.5,
                         color: '#828282',
+                        [theme.breakpoints.down("sm")]: {
+                            width: '100%',
+                            alignItems: 'center',
+                            textAlign: 'center'
+                        },
                     }}
                 >
                     <Typography
@@ -64,25 +88,32 @@ const About = () => {
                             mt: '1em'
                         }}
                     >
-                        <Button
-                            href="#Contact"
-                            sx={{
-                                py: '.8em',
-                                px: '2.5em',
-                                fontWeight: 400,
-                                fontSize: '.6em',
-                                textTransform: 'capitalize',
-                                color: '#ffffff',
-                                backgroundColor: '#000000',
-                                //transition:' box-shadow 0.3s ease',
-                                '&:hover': {
-                                    backgroundColor: '#1C1B1B',
-                                    //boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)'
-                                }
-                            }}
+                        <Link
+                            to="Contact"
+                            spy={true}
+                            smooth={true}
+                            offset={-70}
+                            duration={500}
                         >
-                            Contact me
-                        </Button>
+                            <Button
+                                sx={{
+                                    py: '.8em',
+                                    px: '2.5em',
+                                    fontWeight: 400,
+                                    fontSize: '.6em',
+                                    textTransform: 'capitalize',
+                                    color: '#ffffff',
+                                    backgroundColor: '#000000',
+                                    //transition:' box-shadow 0.3s ease',
+                                    '&:hover': {
+                                        backgroundColor: '#1C1B1B',
+                                        //boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)'
+                                    }
+                                }}
+                            >
+                                Contact me
+                            </Button>
+                        </Link>
                     </Grid>
                 </Grid>
                 <Grid item
@@ -92,6 +123,9 @@ const About = () => {
                         flexDirection: 'column',
                         alignItems: 'flex-end',
                         justifyContent: 'center',
+                        [theme.breakpoints.down("sm")]: {
+                            display: 'none'
+                        },
                     }}
                 >
                     <Avatar/>

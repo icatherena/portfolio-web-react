@@ -7,6 +7,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Heroe from './components/Heroe';
 import Nav from './components/Nav';
+import Projects from './components/Projects';
 import Resume from './components/Resume';
 import Skills from './components/Skills';
 
@@ -44,6 +45,8 @@ function App() {
   const [experience, setExperience] = useState([])
   const [education, setEducation] = useState([])
 
+  const [projects, setProjects] = useState([])
+
   const [hasShadow, setHasShadow] = useState(false)
 
   const handleScroll = () => {
@@ -70,7 +73,8 @@ function App() {
         setCountry(data.datosPersonales.pais);
         setProvince(data.datosPersonales.provincia);
         setEmail(data.datosPersonales.email);
-        setResume(data.datosPersonales.resume)
+        setResume(data.datosPersonales.resume);
+        setProjects(data.proyecto)
       })
       .catch((error) => console.error(error))
     window.addEventListener('scroll', handleScroll)
@@ -178,6 +182,20 @@ function App() {
             <Resume
               education={education}
               experience={experience}
+            />
+          </Grid>
+        </Grid>
+        <Grid item container xs={12}
+          sx={{
+            width: '100vw',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <Grid item xs={8}>
+            <Projects
+              projects={projects}
             />
           </Grid>
         </Grid>

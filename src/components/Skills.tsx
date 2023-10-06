@@ -1,7 +1,8 @@
-import { Box, Button, Card, Grid, Typography } from "@mui/material";
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
+import { Card, CardContent, Grid, Typography } from "@mui/material";
+
 import { useEffect, useState } from "react";
+
+import { createTheme } from "@mui/material/styles";
 
 const Skills = ({ tech }: any) => {
     /* const [isLanguage, setIsLanguage] = useState([])
@@ -32,6 +33,18 @@ const Skills = ({ tech }: any) => {
         frontEnd()
     }, [tech])
 
+    const theme = createTheme({
+        breakpoints: {
+            values: {
+                xs: 0,
+                sm: 770,
+                md: 900,
+                lg: 1200,
+                xl: 1536,
+            },
+        },
+    });
+
     return (
         <Grid container
             id="Stack"
@@ -49,7 +62,12 @@ const Skills = ({ tech }: any) => {
                     display: 'flex',
                     flexDirection: 'row',
                     justifyContent: 'flex-end',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    [theme.breakpoints.down("sm")]: {
+                        alignItems: 'center',
+                        textAlign: 'center',
+                        justifyContent: 'center'
+                    },
                 }}
             >
                 <Grid item
@@ -57,6 +75,13 @@ const Skills = ({ tech }: any) => {
                         display: 'inline-block',
                         textAlign: 'right',
                         gap: 2.5,
+                        [theme.breakpoints.down("sm")]: {
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            textAlign: 'center',
+                            justifyContent: 'center'
+                        },
                     }}
                 >
                     <Typography
@@ -77,7 +102,7 @@ const Skills = ({ tech }: any) => {
                             color: '#000000'
                         }}
                     >
-                        — Languages & Frameworks
+                        Languages & Frameworks
                     </Typography>
                 </Grid>
             </Grid>
@@ -85,7 +110,9 @@ const Skills = ({ tech }: any) => {
                 {tech.map((tech: any) =>
                     <Grid item
                         key={tech.id}
-                        xs={3}
+                        md={3}
+                        sm={4}
+                        xs={6}
                         sx={{
                             display: 'flex-inline',
                             flexDirection: 'row',

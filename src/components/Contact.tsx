@@ -1,11 +1,48 @@
+import React, { useRef, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
+
 import { Box, Button, Grid, Link, TextField, Typography } from "@mui/material"
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
+import { createTheme } from "@mui/material/styles";
+
 const Contact = ({ location, email, github, linkedIn }: any) => {
+    const form = useRef<HTMLFormElement | null>(null);
+    let isResult
+    
+    const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if (form.current) {
+            emailjs.sendForm('service_6vc7qap', 'template_gvv7vd6', form.current as HTMLFormElement, 'njQhR9L7okmJ6ErLS')
+                .then((result: any) => {
+                    console.log(result.text);
+                    toast.success('Message successfully delivered');
+                }, (error: any) => {
+                    console.log(error.text);
+                    toast.error('Something went wrong. Try again later!');
+                });
+        }
+    };
+
+    const theme = createTheme({
+        breakpoints: {
+            values: {
+                xs: 0,
+                sm: 650,
+                md: 835,
+                lg: 900,
+                xl: 1536,
+            },
+        },
+    });
+
     return (
         <Grid container
             id='Contact'
@@ -21,6 +58,14 @@ const Contact = ({ location, email, github, linkedIn }: any) => {
                     width: '65%',
                     display: 'inline-block',
                     //color: '#828282',
+                    [theme.breakpoints.down("lg")]: {
+                        width: '100%',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        textAlign: 'center',
+                        justifyContent: 'center'
+                    },
                 }}
             >
                 <Typography
@@ -42,35 +87,164 @@ const Contact = ({ location, email, github, linkedIn }: any) => {
                     Drop me a line!
                 </Typography>
             </Grid>
+            <ToastContainer 
+                position="bottom-right" 
+                autoClose={3000} 
+                style={{
+                    fontFamily: 'Roboto, sans-serif',
+                    fontWeight: 600,
+                    fontSize: '.8em',
+                }}
+            />
             <Grid item container
                 sx={{
                     width: '100%',
                     display: 'flex',
                     flexDirection: 'row',
                     justifyContent: 'space-between',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    [theme.breakpoints.down("lg")]: {
+                        justifyContent: 'center',
+                        gap: 6
+                    },
                 }}
             >
-                <Grid item
-                    sx={{
-                        width: '55%',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'center',
-                        //alignItems: 'center',
-                        gap: 4
-                    }}
-                >
-                    <Grid
+                <form ref={form} onSubmit={sendEmail}>
+                    <Grid item
                         sx={{
+                            width: '100%',
                             display: 'flex',
-                            flexDirection: 'row',
-                            justifyContent: 'space-between',
-                            alignItems: 'center',
-                            gap: 3
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            //alignItems: 'center',
+                            gap: 4
                         }}
                     >
-                        <Box
+                        <Grid
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                justifyContent: 'space-between',
+                                alignItems: 'center',
+                                gap: 3,
+                                [theme.breakpoints.down("sm")]: {
+                                    flexDirection: 'column'
+                                },
+                            }}
+                        >
+                            <Box
+                            >
+                                <Typography
+                                    sx={{
+                                        fontWeight: 600,
+                                        fontSize: '.8em',
+                                        pb: '1em'
+                                    }}
+                                >
+                                    Name:
+                                </Typography>
+                                <TextField
+                                    name="user_name"
+                                    variant="outlined"
+                                    placeholder="Your Name"
+                                    type="text"
+                                    size="small"
+                                    fullWidth
+                                    style={{
+                                        fontFamily: 'Roboto, sans-serif',
+                                        fontSize: '.8em'
+                                    }}
+                                />
+                            </Box>
+                            <Box
+                            >
+                                <Typography
+                                    sx={{
+                                        fontWeight: 600,
+                                        fontSize: '.8em',
+                                        pb: '1em'
+                                    }}
+                                >
+                                    Lastname:
+                                </Typography>
+                                <TextField
+                                    name="user_lastname"
+                                    variant="outlined"
+                                    placeholder="Your Lastname"
+                                    type="text"
+                                    size="small"
+                                    fullWidth
+                                    style={{
+                                        fontFamily: 'Roboto, sans-serif',
+                                        fontSize: '.8em'
+                                    }}
+                                />
+                            </Box>
+                        </Grid>
+                        <Grid
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                justifyContent: 'space-between',
+                                alignItems: 'center',
+                                gap: 3,
+                                [theme.breakpoints.down("sm")]: {
+                                    flexDirection: 'column'
+                                },
+                            }}
+                        >
+                            <Box
+                            >
+                                <Typography
+                                    sx={{
+                                        fontWeight: 600,
+                                        fontSize: '.8em',
+                                        pb: '1em'
+                                    }}
+                                >
+                                    Subject:
+                                </Typography>
+                                <TextField
+                                    name="subject"
+                                    variant="outlined"
+                                    placeholder="The Subject"
+                                    type="text"
+                                    size="small"
+                                    fullWidth
+                                    style={{
+                                        fontFamily: 'Roboto, sans-serif',
+                                        fontSize: '.8em'
+                                    }}
+                                />
+                            </Box>
+                            <Box
+                            >
+                                <Typography
+                                    sx={{
+                                        fontWeight: 600,
+                                        fontSize: '.8em',
+                                        pb: '1em'
+                                    }}
+                                >
+                                    Email:
+                                </Typography>
+                                <TextField
+                                    required
+                                    name="user_email"
+                                    variant="outlined"
+                                    placeholder="Your Email"
+                                    type="email"
+                                    size="small"
+                                    fullWidth
+                                    style={{
+                                        fontFamily: 'Roboto, sans-serif',
+                                        fontSize: '.8em'
+                                    }}
+                                />
+                            </Box>
+                        </Grid>
+                        <Grid
+                            width={'100%'}
                         >
                             <Typography
                                 sx={{
@@ -79,11 +253,15 @@ const Contact = ({ location, email, github, linkedIn }: any) => {
                                     pb: '1em'
                                 }}
                             >
-                                Name:
+                                Message:
                             </Typography>
                             <TextField
+                                required
+                                name="message"
                                 variant="outlined"
-                                placeholder="Your Name"
+                                multiline
+                                rows={4}
+                                placeholder="Write your message here"
                                 type="text"
                                 size="small"
                                 fullWidth
@@ -92,137 +270,36 @@ const Contact = ({ location, email, github, linkedIn }: any) => {
                                     fontSize: '.8em'
                                 }}
                             />
-                        </Box>
-                        <Box
-                        >
-                            <Typography
-                                sx={{
-                                    fontWeight: 600,
-                                    fontSize: '.8em',
-                                    pb: '1em'
-                                }}
-                            >
-                                Lastname:
-                            </Typography>
-                            <TextField
-                                variant="outlined"
-                                placeholder="Your Lastname"
-                                type="text"
-                                size="small"
-                                fullWidth
-                                style={{
-                                    fontFamily: 'Roboto, sans-serif',
-                                    fontSize: '.8em'
-                                }}
-                            />
-                        </Box>
-                    </Grid>
-                    <Grid
-                        sx={{
-                            display: 'flex',
-                            flexDirection: 'row',
-                            justifyContent: 'space-between',
-                            alignItems: 'center',
-                            gap: 3
-                        }}
-                    >
-                        <Box
-                        >
-                            <Typography
-                                sx={{
-                                    fontWeight: 600,
-                                    fontSize: '.8em',
-                                    pb: '1em'
-                                }}
-                            >
-                                Subject:
-                            </Typography>
-                            <TextField
-                                variant="outlined"
-                                placeholder="The Subject"
-                                type="email"
-                                size="small"
-                                fullWidth
-                                style={{
-                                    fontFamily: 'Roboto, sans-serif',
-                                    fontSize: '.8em'
-                                }}
-                            />
-                        </Box>
-                        <Box
-                        >
-                            <Typography
-                                sx={{
-                                    fontWeight: 600,
-                                    fontSize: '.8em',
-                                    pb: '1em'
-                                }}
-                            >
-                                Email:
-                            </Typography>
-                            <TextField
-                                variant="outlined"
-                                placeholder="Your Email"
-                                type="email"
-                                size="small"
-                                fullWidth
-                                style={{
-                                    fontFamily: 'Roboto, sans-serif',
-                                    fontSize: '.8em'
-                                }}
-                            />
-                        </Box>
-                    </Grid>
-                    <Grid
-                        width={'100%'}
-                    >
-                        <Typography
+                        </Grid>
+                        <Grid
                             sx={{
-                                fontWeight: 600,
-                                fontSize: '.8em',
-                                pb: '1em'
+                                display: 'flex',
+                                flexDirection: 'row',
+                                [theme.breakpoints.down("sm")]: {
+                                    justifyContent: 'center'
+                                },
                             }}
                         >
-                            Message:
-                        </Typography>
-                        <TextField
-                            variant="outlined"
-                            multiline
-                            rows={4}
-                            placeholder="Write your message here"
-                            type="text"
-                            size="small"
-                            fullWidth
-                            style={{
-                                fontFamily: 'Roboto, sans-serif',
-                                fontSize: '.8em'
-                            }}
-                        />
+                            <Button
+                                type="submit" value="Send"
+                                sx={{
+                                    py: '.8em',
+                                    px: '2.5em',
+                                    fontWeight: 400,
+                                    fontSize: '.6em',
+                                    textTransform: 'capitalize',
+                                    color: '#ffffff',
+                                    backgroundColor: '#000000',
+                                    '&:hover': {
+                                        backgroundColor: '#1C1B1B',
+                                    }
+                                }}
+                            >
+                                Send
+                            </Button>
+                        </Grid>
                     </Grid>
-                    <Grid
-                        sx={{
-                            display: 'flex',
-                            flexDirection: 'row',
-                        }}
-                    >
-                        <Button
-                            sx={{
-                                py: '.8em',
-                                px: '2.5em',
-                                fontWeight: 400,
-                                fontSize: '.6em',
-                                textTransform: 'capitalize',
-                                color: '#ffffff',
-                                backgroundColor: '#000000',
-                                '&:hover': {
-                                    backgroundColor: '#1C1B1B',
-                                }
-                            }}
-                        >
-                            Send
-                        </Button>
-                    </Grid>
-                </Grid>
+                </form>
                 <Grid item container
                     sx={{
                         width: '40%',
@@ -356,7 +433,7 @@ const Contact = ({ location, email, github, linkedIn }: any) => {
                             gap: 2.5
                         }}
                     >
-                         <Link href={linkedIn} target={'_blank'}>
+                        <Link href={linkedIn} target={'_blank'}>
                             <Box
                                 sx={{
                                     height: '2em',
@@ -368,7 +445,7 @@ const Contact = ({ location, email, github, linkedIn }: any) => {
                                     justifyContent: 'center',
                                     fontSize: 'small',
                                     color: '#000',
-                                    '&:hover': {                                    
+                                    '&:hover': {
                                         color: '#e95b9f',
                                         border: '0.5px solid #e95b9f',
                                     }
@@ -377,7 +454,7 @@ const Contact = ({ location, email, github, linkedIn }: any) => {
 
                                 <LinkedInIcon fontSize='small' />
                             </Box>
-                         </Link>
+                        </Link>
                         <Link href={github} target={'_blank'}>
                             <Box
                                 sx={{
@@ -390,7 +467,7 @@ const Contact = ({ location, email, github, linkedIn }: any) => {
                                     justifyContent: 'center',
                                     fontSize: 'small',
                                     color: '#000',
-                                    '&:hover': {                                    
+                                    '&:hover': {
                                         color: '#e95b9f',
                                         border: '0.5px solid #e95b9f',
                                     }

@@ -1,4 +1,5 @@
-import { Grid, Link, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
+import { Link } from "react-scroll";
 import { createTheme } from "@mui/material/styles";
 
 const Nav = () => {
@@ -34,7 +35,28 @@ const Nav = () => {
                 }}
             >
                 <Grid item>
-                    <Typography fontSize={'.7em'} fontWeight={500}>[ CB ]</Typography>
+                    <Link 
+                        to="Heroe" 
+                        spy={true} 
+                        smooth={true} 
+                        offset={-100} 
+                        duration={500}
+                    >
+                        <Typography 
+                            fontSize={'.7em'} 
+                            fontWeight={500}
+                            sx={{
+                                textDecoration: 'none',
+                                color: '#000',
+                                '&:hover': {
+                                    color: '#e95b9f',
+                                    cursor: 'pointer',
+                                },
+                            }}
+                        >
+                            [ CB ]
+                        </Typography>
+                    </Link>
                 </Grid>
                 <Grid item
                     sx={{
@@ -46,19 +68,23 @@ const Nav = () => {
                     }}
                 >
                     <Link 
-                        href="#About"
-                        sx={{                   
-                            textDecoration: 'none',
-                            color: '#000',
-                            '&:hover': {
-                                color: '#e95b9f',
-                            },
-                        }}
+                        //href="#About"
+                        to="About" 
+                        spy={true} 
+                        smooth={true} 
+                        offset={-70} 
+                        duration={500}
                     >
                         <Typography 
                             fontSize={'.7em'} 
                             fontWeight={500}
                             sx={{
+                                textDecoration: 'none',
+                                color: '#000',
+                                '&:hover': {
+                                    color: '#e95b9f',
+                                    cursor: 'pointer',
+                                },
                                 [theme.breakpoints.between("xs", "sm")]: {
                                     display: 'none'
                                 },
@@ -68,19 +94,23 @@ const Nav = () => {
                         </Typography>
                     </Link>
                     <Link 
-                        href="#Stack"
-                        sx={{                   
-                            textDecoration: 'none',
-                            color: '#000',
-                            '&:hover': {
-                                color: '#e95b9f',
-                            },
-                        }}
+                        //href="#Stack"
+                        to="Stack" 
+                        spy={true} 
+                        smooth={true} 
+                        offset={-70} 
+                        duration={500}
                     >
                         <Typography 
                             fontSize={'.7em'} 
                             fontWeight={500}
                             sx={{
+                                textDecoration: 'none',
+                                color: '#000',
+                                '&:hover': {
+                                    color: '#e95b9f',
+                                    cursor: 'pointer',
+                                },
                                 [theme.breakpoints.between("xs", "sm")]: {
                                     display: 'none'
                                 },
@@ -90,19 +120,23 @@ const Nav = () => {
                         </Typography>
                     </Link>
                     <Link 
-                        href="#Resume"
-                        sx={{                   
-                            textDecoration: 'none',
-                            color: '#000',
-                            '&:hover': {
-                                color: '#e95b9f',
-                            },
-                        }}
+                        //href="#Resume"
+                        to="Resume" 
+                        spy={true} 
+                        smooth={true} 
+                        offset={-70} 
+                        duration={500}
                     >
                         <Typography 
                             fontSize={'.7em'} 
                             fontWeight={500}
                             sx={{
+                                textDecoration: 'none',
+                                color: '#000',
+                                '&:hover': {
+                                    color: '#e95b9f',
+                                    cursor: 'pointer',
+                                },
                                 [theme.breakpoints.between("xs", "sm")]: {
                                     display: 'none'
                                 },
@@ -112,19 +146,23 @@ const Nav = () => {
                         </Typography>
                     </Link>
                     <Link 
-                        href="#Projects"
-                        sx={{                   
-                            textDecoration: 'none',
-                            color: '#000',
-                            '&:hover': {
-                                color: '#e95b9f',
-                            },
-                        }}
+                        //href="#Projects"
+                        to="Projects" 
+                        spy={true} 
+                        smooth={true} 
+                        offset={-70} 
+                        duration={500}
                     >
                         <Typography 
                             fontSize={'.7em'} 
                             fontWeight={500}
                             sx={{
+                                textDecoration: 'none',
+                                color: '#000',
+                                '&:hover': {
+                                    color: '#e95b9f',
+                                    cursor: 'pointer',
+                                },
                                 [theme.breakpoints.between("xs", "sm")]: {
                                     display: 'none'
                                 },
@@ -134,18 +172,24 @@ const Nav = () => {
                         </Typography>
                     </Link>
                     <Link 
-                        href="#Contact"
-                        sx={{                   
-                            textDecoration: 'none',
-                            color: '#000',
-                            '&:hover': {
-                                color: '#e95b9f',
-                            },
-                        }}
-                    >
+                        //href="#Contact"
+                        to="Contact" 
+                        spy={true} 
+                        smooth={true} 
+                        offset={-70} 
+                        duration={500}
+                        >
                         <Typography 
                             fontSize={'.7em'} 
                             fontWeight={500}
+                            sx={{                   
+                                textDecoration: 'none',
+                                color: '#000',
+                                '&:hover': {
+                                    color: '#e95b9f',
+                                    cursor: 'pointer',
+                                },
+                            }}
                         >
                             Contact
                         </Typography>

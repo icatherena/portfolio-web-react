@@ -1,21 +1,25 @@
-import { Avatar, Box, Button, Grid, Link, Typography } from "@mui/material";
+import { Avatar, Box, Button, Grid, Typography } from "@mui/material";
+
+import { Link } from "react-scroll";
+
 import { createTheme } from "@mui/material/styles";
 
 const Heroe = ({ name, lastName, career, summary, resume }: any) => {
     const theme = createTheme({
         breakpoints: {
             values: {
-              xs: 0,
-              sm: 770,
-              md: 1000,
-              lg: 1200,
-              xl: 1536,
+                xs: 0,
+                sm: 770,
+                md: 1000,
+                lg: 1200,
+                xl: 1536,
             },
-          },
+        },
     });
     return (
         <Grid container>
             <Grid item container
+                id='Heroe'
                 sx={{
                     py: '2em',
                     display: 'flex',
@@ -58,6 +62,7 @@ const Heroe = ({ name, lastName, career, summary, resume }: any) => {
                         },
                         [theme.breakpoints.down("sm")]: {
                             alignItems: 'center',
+                            textAlign: 'center',
                             justifyContent: 'center'
                         },
                     }}
@@ -126,15 +131,22 @@ const Heroe = ({ name, lastName, career, summary, resume }: any) => {
                     </Typography>
                     <Grid
                         sx={{
-                           
+
                             display: 'flex',
                             flexDirection: 'row',
                             gap: 2,
                             mt: '2em'
                         }}
                     >
+                        <Link
+                            to="Contact"
+                            spy={true}
+                            smooth={true}
+                            offset={-70}
+                            duration={800}
+                        >
                             <Button
-                                href="#Contact"
+                                //href="#Contact"
                                 sx={{
                                     py: '.8em',
                                     px: '2.5em',
@@ -152,27 +164,27 @@ const Heroe = ({ name, lastName, career, summary, resume }: any) => {
                                 }}
                             >
                                 Hire Me
-                            </Button>  
-                            <Link href={resume} download>
-                                <Button
-                                    sx={{
-                                        py: '.8em',
-                                        px: '2.5em',
-                                        fontWeight: 400,
-                                        fontSize: '.6em',
-                                        textTransform: 'capitalize',
-                                        color: '#000000',
-                                        backgroundColor: '#BEBEBE',
-                                        //transition:' box-shadow 0.3s ease',
-                                        '&:hover': {
-                                            backgroundColor: '#ADADAD',
-                                            //boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)'
-                                        }
-                                    }}
-                                >
-                                    Download CV
-                                </Button>
-                            </Link>  
+                            </Button>
+                        </Link>
+                        <Button
+                            href={resume} download
+                            sx={{
+                                py: '.8em',
+                                px: '2.5em',
+                                fontWeight: 400,
+                                fontSize: '.6em',
+                                textTransform: 'capitalize',
+                                color: '#000000',
+                                backgroundColor: '#BEBEBE',
+                                //transition:' box-shadow 0.3s ease',
+                                '&:hover': {
+                                    backgroundColor: '#ADADAD',
+                                    //boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)'
+                                }
+                            }}
+                        >
+                            Download CV
+                        </Button>
                     </Grid>
                 </Grid>
             </Grid>

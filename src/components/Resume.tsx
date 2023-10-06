@@ -1,6 +1,6 @@
 import { Divider, Grid, Typography } from "@mui/material";
-import exp from "constants";
-import { useState } from "react";
+
+import { createTheme } from "@mui/material/styles";
 
 const Resume = ({ education, experience }: any) => {
     const resume = [...experience, ...education]
@@ -12,6 +12,18 @@ const Resume = ({ education, experience }: any) => {
 
     const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' }
 
+    const theme = createTheme({
+        breakpoints: {
+            values: {
+                xs: 0,
+                sm: 770,
+                md: 835,
+                lg: 1200,
+                xl: 1536,
+            },
+        },
+    });
+
     return (
         <Grid container
             id='Resume'
@@ -21,13 +33,27 @@ const Resume = ({ education, experience }: any) => {
         >
             <Grid item container
                 style={{ fontFamily: 'Roboto, sans-serif' }}
-                gap={4}
+                sx={{
+                    gap: 4,
+                    [theme.breakpoints.down("md")]: {
+                        alignItems: 'center',
+                        textAlign: 'center',
+                        justifyContent: 'center'
+                    },
+                }}
             >
                 <Grid item
                     sx={{
                         display: 'inline-block',
                         gap: 2.5,
-                        color: '#828282',
+                        color: '#828282',                        
+                        [theme.breakpoints.down("md")]: {
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            textAlign: 'center',
+                            justifyContent: 'center'
+                        },
                     }}
                 >
                     <Typography
@@ -48,7 +74,7 @@ const Resume = ({ education, experience }: any) => {
                             color: '#000000'
                         }}
                     >
-                        Education & Experience —
+                        Education & Experience
                     </Typography>
                 </Grid>
                 <Grid item container
@@ -59,6 +85,13 @@ const Resume = ({ education, experience }: any) => {
                         justifyContent: 'space-between',
                         gap: 4,
                         color: '#828282',
+                        [theme.breakpoints.down("md")]: {
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            textAlign: 'center',
+                            justifyContent: 'center',
+                            gap: 1.5
+                        },
                     }}
                 >
                     <Grid item
@@ -67,7 +100,12 @@ const Resume = ({ education, experience }: any) => {
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'flex-end',
-                            textAlign: 'right'
+                            textAlign: 'right',
+                            [theme.breakpoints.down("md")]: {
+                                alignItems: 'center',
+                                textAlign: 'center',
+                                justifyContent: 'center'
+                            },
                         }}
                     >
                         {column1.map((item: any) =>
@@ -166,7 +204,10 @@ const Resume = ({ education, experience }: any) => {
                             //clipPath: 'polygon(0% 50%, 100% 0%, 100% 100%)'
                             borderColor: '#BEBEBE',
                             borderStyle: 'dashed',
-                            borderWidth: '1px'
+                            borderWidth: '1px',
+                            [theme.breakpoints.down("md")]: {
+                                display: 'none'
+                            },
                         }}
                     />
                     <Grid item
@@ -175,7 +216,12 @@ const Resume = ({ education, experience }: any) => {
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'flex-start',
-                            textAlign: 'left'
+                            textAlign: 'left',
+                            [theme.breakpoints.down("md")]: {
+                                alignItems: 'center',
+                                textAlign: 'center',
+                                justifyContent: 'center'
+                            },
                         }}
                     >
                         {column2.map((item: any) =>
