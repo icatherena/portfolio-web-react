@@ -19,4 +19,4 @@
   Un pequeño footer termina la navegación.
 </p>
 <h3>Maqueta</h3>
-<a href='https://dribbble.com/shots/21708929-Tokenex-Personal-portfolio-website-landing-page-design' target={'_blank'}><p>Portfolio</p></a>
+<a href='https://dribbble.com/shots/21708929-Tokenex-Personal-portfolio-website-landing-page-design'>Link</a>
