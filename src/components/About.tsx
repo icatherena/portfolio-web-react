@@ -5,6 +5,7 @@ import { Link } from "react-scroll"
 import { createTheme } from "@mui/material/styles";
 
 const About = () => {
+    const gea = 'https://lh3.google.com/u/1/d/1r6WJklRTL9KWn8nPkA3ncRtqVgvrdkMG=w2000-h1250-iv1'
     const theme = createTheme({
         breakpoints: {
             values: {
@@ -128,7 +129,13 @@ const About = () => {
                         },
                     }}
                 >
-                    <Avatar/>
+                    <Avatar 
+                        src={gea}
+                        sx={{
+                            width: '70%',
+                            height: 'fit-content'
+                        }}
+                    />
                 </Grid>
             </Grid>
         </Grid>

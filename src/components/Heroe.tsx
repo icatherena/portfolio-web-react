@@ -5,6 +5,7 @@ import { Link } from "react-scroll";
 import { createTheme } from "@mui/material/styles";
 
 const Heroe = ({ name, lastName, career, summary, resume }: any) => {
+    const daijin = 'https://lh3.google.com/u/1/d/1xDilR-0g72fKMOnk0K91l45I3ag-F5ft=w2000-h1250-iv1'
     const theme = createTheme({
         breakpoints: {
             values: {
@@ -27,7 +28,12 @@ const Heroe = ({ name, lastName, career, summary, resume }: any) => {
                     alignItems: 'center',
                     gap: 7,
                     [theme.breakpoints.down("md")]: {
-                        flexDirection: 'column'
+                        flexDirection: 'column',
+                        gap: 0,
+                    },
+                    [theme.breakpoints.down("sm")]: {
+                        flexDirection: 'column',
+                        gap: 0,
                     },
                 }}
             >
@@ -37,15 +43,26 @@ const Heroe = ({ name, lastName, career, summary, resume }: any) => {
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
+                        //overflow: 'hidden',
                         [theme.breakpoints.down("md")]: {
-                            width: '100%',
+                            width: '60%',
                             py: '2em'
+                        },
+                        [theme.breakpoints.down("sm")]: {
+                            width: '100%',
+                            pt: '2em',
+                            pb: 0
                         },
                     }}
                 >
                     <Box
                     >
                         <Avatar
+                            src={daijin}
+                            sx={{
+                                width: '100%',
+                                height: 'fit-content'
+                            }}
                         />
                     </Box>
                 </Grid>
